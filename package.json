@@ -1,0 +1,26 @@
+{
+  "name": "djs-v14-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "bun run node dist/index.js",
+    "build-cmd": "bun run node dist/CommandRegister.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.12.13",
+    "discord.js": "^14.15.2",
+    "dotenv": "^16.4.5",
+    "pm2": "^5.4.0",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
