@@ -59,7 +59,7 @@ const commandFiles = fs
   );
 
 for (const file of commandFiles) {
-  import(`./commands/${file}`)
+  import(`${__dirname}/commands/${file}`)
     .then((command) => {
       client.commands.set(command.data.name, command);
     })
@@ -76,7 +76,7 @@ const contextCommandFiles = fs
   );
 
 for (const file of contextCommandFiles) {
-  import(`./contextMenu/${file}`)
+  import(`${__dirname}/contextMenu/${file}`)
     .then((command) => {
       client.commands.set(command.data.name, command);
     })

@@ -16,18 +16,18 @@ if (!CLIENT_ID) {
 
 const commands: Array<any> = [];
 const commandFiles = fs
-  .readdirSync("./commands")
+  .readdirSync(`${__dirname}/commands`)
   .filter((file) => file.endsWith(".js") && !file.startsWith("!"));
 const contextCommandFiles = fs
-  .readdirSync("./contextMenu")
+  .readdirSync(`${__dirname}/contextMenu`)
   .filter((file) => file.endsWith(".js") && !file.startsWith("!"));
 
 for (const file of commandFiles) {
-  const command = require(`./commands/${file}`);
+  const command = require(`${__dirname}/commands/${file}`);
   commands.push(command.data.toJSON());
 }
 for (const file of contextCommandFiles) {
-  const command = require(`./contextMenu/${file}`);
+  const command = require(`${__dirname}/contextMenu/${file}`);
   commands.push(command.data.toJSON());
 }
 const rest: REST = new REST({ version: "10" }).setToken(BOT_TOKEN);
